@@ -231,7 +231,7 @@ docker run --rm -v demo-backend-data:/source -v $(pwd):/backup alpine tar czf /b
 
 - Add user authentication
 
-- Implement message editing/deletion
+- Implement message editing
 
 - Add database integration (MongoDB/PostgreSQL)
 
