@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Node.js Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simple Node.js Demo</h1>
+            <p>Frontend and Backend with Docker</p>
+        </header>
+
+        <section class="add-message">
+            <h2>Add a Message</h2>
+            <div class="input-group">
+                <input type="text" id="messageInput" placeholder="Enter your message">
+                <button onclick="addMessage()">Send Message</button>
+            </div>
+        </section>
+
+        <section class="messages">
+            <h2>Messages</h2>
+            <div class="actions">
+                <button onclick="loadMessages()">Retrieval Messages</button>
+                <button onclick="clearOldMessages()">Clearing Old Messages</button>
+                <button onclick="deleteAllMessages()" class="danger">Delete All Messages</button>
+            </div>
+            <div id="messagesList" class="messages-list">
+                Failed to load messages. Check if backend is running.
+            </div>
+        </section>
+
+        <section class="management">
+            <h2>Management</h2>
+            <div class="input-group">
+                <input type="number" id="hoursInput" placeholder="Hours" min="1" value="24">
+                <button onclick="clearMessagesOlderThan()">Clearing Messages Older Than...</button>
+            </div>
+            
+            <div class="auto-delete-section">
+                <h3>Auto-Deletion Timer</h3>
+                <div class="auto-delete-controls">
+                    <input type="number" id="autoDeleteInput" placeholder="Hours" min="1" value="24">
+                    <button onclick="setAutoDelete()">Set Auto-Delete Timer</button>
+                </div>
+                <div id="autoDeleteStatus" class="auto-delete-status">Auto-deletion: 24 hours</div>
+                <small>Messages older than the specified hours will be automatically deleted</small>
+            </div>
+
+            <div class="management-actions">
+                <button onclick="deleteAllMessages()" class="danger">Delete All Messages</button>
+            </div>
+        </section>
+
+        <section class="status">
+            <h2>Backend Status</h2>
+            <div id="backendStatus" class="status-disconnected">Disconnected</div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

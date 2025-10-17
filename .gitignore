@@ -1,0 +1,6 @@
+Dockerfile
+*.yaml
+*.conf
+node_modules/
+docker-compose.yaml
+.env
